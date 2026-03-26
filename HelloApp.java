@@ -1,7 +1,15 @@
 public class HelloApp {
     public static void main(String[] args) {
-        // If a name is provided, use it; otherwise default to "World"
-        String name = (args.length > 0) ? args[0] : "World";
-        System.out.println("Hello, " + name + "!");
+        String greeting;
+        
+        if (args.length > 0) {
+            // Join all names with comma and space
+            greeting = String.join(", ", args);
+        } else {
+            // Default if no names provided
+            greeting = "World";
+        }
+        
+        System.out.println("Hello, " + greeting + "!");
     }
 }
