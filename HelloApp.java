@@ -1,18 +1,19 @@
 public class HelloApp {
     public static void main(String[] args) {
-        StringBuilder names = new StringBuilder();
+        StringBuilder nameBuilder = new StringBuilder();
         
         if (args.length > 0) {
             for (String name : args) {
-                if (names.length() > 0) {
-                    names.append(", "); // add comma separator
-                }
-                names.append(name);
+                nameBuilder.append(name).append(", "); // append all names with comma and space
+            }
+            // Remove trailing ", "
+            if (nameBuilder.length() > 0) {
+                nameBuilder = new StringBuilder(nameBuilder.substring(0, nameBuilder.length() - 2));
             }
         } else {
-            names.append("World"); // default value
+            nameBuilder.append("World"); // default
         }
         
-        System.out.println("Hello, " + names.toString() + "!");
+        System.out.println("Hello, " + nameBuilder.toString() + "!");
     }
 }
